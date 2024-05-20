@@ -1,0 +1,121 @@
+.container__home{
+  height: 100vh;
+  overflow-y: scroll;
+    padding-inline: 20px;
+    h2{
+      padding-top: 30px;
+      padding-bottom: 20px;
+      margin: 0;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 20px;
+    }
+    .home__header{
+        padding-top: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .profile{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            h3, p{
+                font-weight: 600;
+                margin: 0;
+            }
+            h3{
+                font-size: 15px;
+                color: #ffffff;
+            }
+            p{
+                font-size: 12px;
+                color: rgb(143, 138, 138);
+            }
+            img{
+                border-radius: 50%;
+                height: 34px;
+                border: 2px solid #00DBFC;
+            }
+        }
+        .profile-actions{
+            display: flex;
+            gap: 4px;
+        }
+    }
+  .home__listening{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+
+    .listening__card{
+      height: 55px;
+      //width: 183px;
+      background-color: #1B2223;
+      border-radius: 10px;
+      display: flex;
+      gap: 10px;
+      div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+      }
+      img{
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        height: 100%;
+      }
+      h3, p{
+        margin: 0;
+      }
+      h3{
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 12px;
+      }
+      p{
+        font-weight: 600;
+        color: rgb(143, 138, 138);
+        font-size: 10px;
+      }
+
+    }
+  }
+
+  .recommend{
+    padding-top: 20px !important;
+  }
+  .home__recommend{
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 100%;
+    .recommend_card{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      img{
+        height: 90px;
+        width: 90px;
+        border-radius: 10px;
+      }
+      div{
+        h3{
+          font-size: 18px;
+        }
+        p{
+          font-size: 12px;
+        }
+        h3, p{
+          color: #ffffff;
+          margin: 0;
+        }
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+  }
+}

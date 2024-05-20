@@ -1,0 +1,7 @@
+{
+  "name": "Musify",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
