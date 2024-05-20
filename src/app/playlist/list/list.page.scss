@@ -1,0 +1,94 @@
+.playlist__list {
+  padding-inline: 20px;
+
+  .list__header {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h3 {
+      font-size: 12px;
+      font-weight: 500;
+      margin: 0;
+      color: #bbbbbb;
+    }
+  }
+  .list__playlist-img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    img{
+      padding-top: 15px;
+      padding-bottom: 15px;
+      width: 260px;
+      height: 252px;
+      border-radius: 5px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    h2, p{
+      margin: 0;
+    }
+    h2{
+      color: #ffffff;
+      font-size: 30px;
+    }
+    p{
+      font-weight: 600;
+      color: #8A9A9D;
+      font-size: 13px;
+    }
+  }
+
+  .list__songs {
+    height: 40vh;
+    overflow-y: scroll;
+
+    .card-song {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+
+      div {
+        display: flex;
+        justify-content: center;
+        .card-text{
+          margin-left: 10px;
+          display: flex;
+          flex-direction: column;
+          gap: 3px;
+        }
+
+        img {
+          height: 53px;
+          border-radius: 5px;
+          object-fit: cover;
+        }
+
+        .card-text {
+
+          h3,
+          p {
+            margin: 0;
+          }
+
+          h3 {
+            font-size: 16px;
+            color: #ffffff;
+          }
+
+          p {
+            font-weight: 600;
+            font-size: 12px;
+            color: #8A9A9D;
+          }
+        }
+
+      }
+    }
+  }
+}

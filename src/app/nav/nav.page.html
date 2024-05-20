@@ -1,0 +1,38 @@
+<div class="container__menu">
+  <ion-tabs (ionTabsDidChange)="onTabChange($event)">
+    <div class="menu__nav">
+      <ion-tab-button
+        tab="home"
+        href="/home/tab1"
+        [ngClass]="{'tab-selected': isSelected('home')}">
+        <ion-icon aria-hidden="true" name="home-outline"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button
+        tab="search"
+        href="/home/tab2"
+        [ngClass]="{'tab-selected': isSelected('search')}">
+        <ion-icon aria-hidden="true" name="search-outline"></ion-icon>
+        <ion-label>Pesquisa</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button
+        tab="playlist"
+        href="/home/tab3"
+        [ngClass]="{'tab-selected': isSelected('playlist')}">
+        <ion-icon aria-hidden="true" name="musical-notes-outline"></ion-icon>
+        <ion-label>Playlist</ion-label>
+      </ion-tab-button>
+
+<!--      <ion-tab-button -->
+<!--        tab="youtube" -->
+<!--        href="/home/tab3"-->
+<!--        [ngClass]="{'tab-selected': isSelected('youtube')}">-->
+<!--        <ion-icon aria-hidden="true" name="logo-youtube"></ion-icon>-->
+<!--        <ion-label>Youtube</ion-label>-->
+<!--      </ion-tab-button>-->
+    </div>
+  </ion-tabs>
+</div>
+

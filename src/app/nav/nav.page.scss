@@ -1,0 +1,20 @@
+
+.container__menu{
+    .menu__nav{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 10px;
+    }
+    .menu__nav .tab-selected {
+        color: #00DBFC !important;
+      }
+
+    .menu__nav .tab-selected ion-icon {
+        color: #00DBFC !important;
+    }
+  ion-tab-button{
+    color: #ffffff;
+  }
+}
+

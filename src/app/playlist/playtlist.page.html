@@ -1,0 +1,50 @@
+<div class="container__playlist">
+  <div class="playlist__header">
+    <div class="header__title">
+      <img src="../../assets/Logo-Azul.png" alt="">
+      <h3>Sua Playlist</h3>
+    </div>
+    <img src="../../assets/icons/search.svg" alt="search" (click)="toggleSearchbar()"
+      *ngIf="!isSearchbarVisible && !isAnimating" class="search-icon">
+    <img src="../../assets/icons/cancel.svg" alt="cancel" (click)="closeSearchbar()" *ngIf="isSearchbarVisible"
+      class="cancel-icon">
+
+  </div>
+
+  <ion-searchbar animated="true" placeholder="Pesquise sua Playlist" *ngIf="isSearchbarVisible || isAnimating"
+    [ngClass]="{
+      'searchbar-animate-enter': isSearchbarVisible && !isAnimating,
+      'searchbar-animate-leave': !isSearchbarVisible && isAnimating
+    }"></ion-searchbar>
+
+  <div class="playlist_add">
+    <button (click)="setOpen(true)">Nova Playlist</button>
+  </div>
+
+  <div class="list">
+    <div class="list-card" *ngFor="let item of playList" [routerLink]="'list/' + item.id">
+      <img [src]="item.foto" alt="">
+      <div>
+        <h3>{{item.nome}}</h3>
+        <p>{{item.songs}} Songs</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<ion-modal [isOpen]="isModalOpen">
+  <ng-template>
+    <div class="modal-add">
+        <h2>Nova Playlist</h2>
+        <input type="text" placeholder="Dê um título à sua playlist">
+
+        <div class="btn-modal">
+          <button class="cancel" (click)="setOpen(false)">Cancelar</button>
+          <button class="create">Criar</button>
+        </div>
+
+      </div>
+  </ng-template>
+</ion-modal>

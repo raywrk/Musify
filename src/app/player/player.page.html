@@ -1,0 +1,58 @@
+<div class="container__player">
+
+  <div class="player__header">
+    <div>
+      <span>TOCANDO DA PLAYLIST:</span>
+      <p>Let's Rock</p>
+    </div>
+    <img src="../../assets/icons/back.svg" alt="back" (click)="backToPlaylist()">
+  </div>
+
+  <div class="player__img">
+    <img [src]="currentAlbumPhoto" alt="menu-3points">
+  </div>
+
+  <div class="player_artist">
+    <h2>{{currentMusicName}}</h2>
+    <div class="artist">
+      <p>{{currentArtistName}}</p>
+      <div class="actions">
+        <img src="../../assets/player/volume.svg" alt="">
+        <img src="../../assets/player/share.svg" alt="">
+        <img src="../../assets/player/like.svg" alt="">
+        <div class="player_volume">
+          <input type="range" min="0" max="1" step="0.01" value="0.5" (input)="setVolume($event)">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="player">
+    <input class="range blue" type="range" min="0" [max]="duration$ | async" [(ngModel)]="currentTime" (input)="seekTo()">
+    <div class="player-actions">
+      <img src="../../assets/player/previous.svg" alt="" (click)="previousSong()">
+      <img src="../../assets/player/play.svg" alt="" *ngIf="!song.paused"  (click)="pauseSong()">
+      <img src="../../assets/player/pause.svg" alt="" *ngIf="song.paused" (click)="playSong()">
+      <img src="../../assets/player/next.svg" alt="" (click)="nextSong()">
+    </div>
+  </div>
+
+  <div class="player__lyrics">
+
+    <h3>Letra e Tradução</h3>
+
+    <div class="lyrics">
+      <img src="../../assets/player/us.png" alt="US" (click)="showTraducaoUS()">
+      <img src="../../assets/player/br.png" alt="BR" (click)="showTraducaoBR()">
+    </div>
+
+    <div class="lyrics-card">
+      <p *ngIf="traducaoShowUS" [innerHTML]="translateMusic.mus[0].text | newlineToBr"></p>
+      <p *ngIf="traducaoShowBR" [innerHTML]="translateMusic.mus[0].translate[0].text | newlineToBr"></p>
+    </div>
+
+  </div>
+
+
+
+</div>

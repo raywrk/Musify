@@ -1,0 +1,33 @@
+<div class="playlist__list">
+
+  <div class="list__header">
+    <img src="../../../assets/icons/back.svg" alt="" (click)="backToPlaylist()">
+    <h3>DE "PLAYLISTS"</h3>
+    <img src="../../../assets/icons/menu-3points.svg" alt="">
+  </div>
+
+  <div class="list__playlist-img">
+    <img src="../../../assets/playlist/playlist-rock.png" alt="" >
+    <h2>Let's Rock</h2>
+    <p>20 Songs</p>
+  </div>
+
+  <div class="list__songs">
+
+    <div class="card-song"  *ngFor="let item of listSongs; let i = index">
+
+      <div (click)="openSong(i)">
+        <img [src]="item.img" alt="">
+        <div class="card-text" >
+          <h3>{{item.nome}}</h3>
+          <p>{{item.artist}}</p>
+        </div>
+      </div>
+
+      <img src="../../../assets/icons/menu-3points-small.svg" alt="menu-3points">
+
+    </div>
+
+  </div>
+
+</div>
