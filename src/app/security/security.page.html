@@ -1,0 +1,83 @@
+<div class="container__intro" *ngIf="showIntro">
+  <div class="logo">
+    <div class="box">
+      <img src="../../assets/logo/logo-branco.png" alt="">
+    </div>
+    <div class="text"><span class="first">Musi</span> <span class="second">fy</span></div>
+  </div>
+</div>
+
+<ng-container *ngIf="!showIntro">
+  <div class="container_login" *ngIf="!showRecuperarSenha">
+    <form action="" class="form__login">
+
+      <img src="../../assets/logo/logo-azul.png" alt="">
+      <h2>Login</h2>
+      <div>
+        <label for="email">Email</label>
+        <input type="text" id="email">
+      </div>
+
+      <div>
+        <label for="password">Senha</label>
+        <input type="password" id="password">
+      </div>
+
+      <button>Entrar</button>
+      <span>Não tem uma conta? <a (click)="handleRegister()">Cadastre-se</a></span>
+      <span>Esqueceu sua senha? <a (click)="recuperarSenha()">Recuperar</a></span>
+
+    </form>
+  </div>
+
+</ng-container>
+
+<div class="container_login" *ngIf="showRecuperarSenha">
+  <form action="" class="form__login">
+
+    <img src="../../assets/logo/logo-azul.png" alt="">
+    <h2>Recuperar senha</h2>
+    <div>
+      <label for="email">Email</label>
+      <input type="text" id="email">
+    </div>
+    <button>Enviar</button>
+    <span>Já recebeu o token? <a (click)="voltarLogin()"> Voltar para Login</a></span>
+  </form>
+</div>
+
+
+<ion-modal [isOpen]="isModalOpen">
+  <ng-template>
+    <div class="modal-add">
+        <h2>Criar conta</h2>
+
+        <div>
+          <label for="nome">Nome</label>
+          <input type="text" placeholder="Ray" id="nome">
+        </div>
+
+        <div>
+          <label for="sobrenome">Sobrenome</label>
+          <input type="text" placeholder="Gabriel" id="sobrenome">
+        </div>
+
+        <div>
+          <label for="email">E-mail</label>
+          <input type="email" placeholder="ray@gmail.com" id="email">
+        </div>
+
+        <div>
+          <label for="email">Senha</label>
+          <input type="password" placeholder="*****" id="email">
+        </div>
+
+        <div class="btn-modal">
+          <button class="cancel" (click)="handleCancel()" >Cancelar</button>
+          <button class="create">Criar</button>
+        </div>
+
+      </div>
+  </ng-template>
+  <!-- <ion-button (click)="setOpen(true)">Click Me</ion-button> -->
+</ion-modal>

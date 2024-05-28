@@ -15,4 +15,4 @@ import {SecurityPageRoutingModule} from "./security-routing.module";
   ],
   declarations: [SecurityPage]
 })
-export class Tab2PageModule {}
+export class SecurityPageModule {}

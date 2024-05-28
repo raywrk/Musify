@@ -73,6 +73,11 @@ export class PlayerPage implements OnInit {
 
 
   ngOnInit() {
+    this.currentTime$.next(0);
+      this.currentTime$.subscribe((time) => {
+        this.currentTime = time;
+      });
+
     this.musicService.currentSongIndex$.subscribe(index => {
       const song = this.musicService.getCurrentSong();
       if (song) {

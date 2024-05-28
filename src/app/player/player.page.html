@@ -29,6 +29,7 @@
 
   <div class="player">
     <input class="range blue" type="range" min="0" [max]="duration$ | async" [(ngModel)]="currentTime" (input)="seekTo()">
+    <span>{{ currentTime | timeFormat }}</span>
     <div class="player-actions">
       <img src="../../assets/player/previous.svg" alt="" (click)="previousSong()">
       <img src="../../assets/player/play.svg" alt="" *ngIf="!song.paused"  (click)="pauseSong()">
