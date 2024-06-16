@@ -9,21 +9,21 @@
 
 <ng-container *ngIf="!showIntro">
   <div class="container_login" *ngIf="!showRecuperarSenha">
-    <form action="" class="form__login">
+    <form action="" class="form__login" [formGroup]="formLogin">
 
       <img src="../../assets/logo/logo-azul.png" alt="">
       <h2>Login</h2>
       <div>
         <label for="email">Email</label>
-        <input type="text" id="email">
+        <input type="text" id="email" formControlName="email">
       </div>
 
       <div>
         <label for="password">Senha</label>
-        <input type="password" id="password">
+        <input type="password" id="password" formControlName="senha">
       </div>
 
-      <button>Entrar</button>
+      <button (click)="onLogin()">Entrar</button>
       <span>Não tem uma conta? <a (click)="handleRegister()">Cadastre-se</a></span>
       <span>Esqueceu sua senha? <a (click)="recuperarSenha()">Recuperar</a></span>
 
@@ -79,5 +79,4 @@
 
       </div>
   </ng-template>
-  <!-- <ion-button (click)="setOpen(true)">Click Me</ion-button> -->
 </ion-modal>
